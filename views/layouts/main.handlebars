@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body style="background-image:url(/Images/VideogameBackground.jpg);">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand bg-dark rounded p-3 text-light" href="#">App Name</a>
+            <form class="d-flex">
+                <!-- If the user is logged in, show a logout button
+    {{#if loggedIn}}
+    <button id="logout" class="btn-no-style">Logout</button>
+    {{else}} -->
+    <!-- Otherwise, show a link to login 
+    <a href="/login">Login</a>
+    {{/if}}</button> --->
+              <button class="btn bg-dark text-light mr-3" type="submit">Login</button>
+              <button class="btn bg-dark text-light" type="submit">Sign Up</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    {{{body}}}
+    <!-- Need help with a JS script for when they logout -->
+  {{#if loggedIn}}
+  <script src="/"></script>
+  {{/if}}
+</body>
+</html>
