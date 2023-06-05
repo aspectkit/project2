@@ -15,17 +15,18 @@ router.get('/', async (req, res) => {
 
 router.get('/profile', withAuth, async (req, res) => {
     try {
-        const userData = await User.findOne(req.session.user_id, {
+        const userData = await User.findByPk(req.session.user_id, {
             attributes: {exclude: ['password']}, 
         });
 
         const user = userData.get({plain: true});
-
+        console.log(user);
         res.render('gameLib', {
             ...user,
             loggedIn: true
         });
     } catch (err){
+        console.log("issue here");
         res.status(500).json(err);
     }
 });

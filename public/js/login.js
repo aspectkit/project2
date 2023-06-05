@@ -1,6 +1,6 @@
 const loginFormHandler = async (event) => {
     event.preventDefault();
-
+    console.log("login button clicked!");
     // Collect values from the login form
     const email = document.querySelector('#typeEmailX').value.trim();
     const password = document.querySelector('#typePasswordX').value.trim();
@@ -16,9 +16,10 @@ const loginFormHandler = async (event) => {
         if (response.ok) {
             document.location.replace('/profile');
         } else {
-            alert(response.statusText);
+            let incorrect = document.getElementById('incorrect');
+            incorrect.style.display = "block";
         }
     }
 };
 
-document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
+document.querySelector('.login-btn').addEventListener('click', loginFormHandler);
