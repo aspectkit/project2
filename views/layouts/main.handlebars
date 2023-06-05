@@ -11,7 +11,7 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
           <a class="navbar-brand bg-dark rounded p-3 text-light" href="#">LevelUp!</a>
-            <form class="d-flex">
+            <form class="page-btns d-flex">
                 <!-- If the user is logged in, show a logout button
     {{#if loggedIn}}
     <button id="logout" class="btn-no-style">Logout</button>
@@ -19,8 +19,15 @@
     <!-- Otherwise, show a link to login 
     <a href="/login">Login</a>
     {{/if}}</button> --->
-              <button class="btn bg-dark text-light mr-3" type="submit">Login</button>
-              <button class="btn bg-dark text-light" type="submit">Sign Up</button>
+              {{#if loggedIn}}
+              <a href="/profile">profile</a>
+              <button class="no-button" id="logout">logout</button>
+              {{else}}
+              <button class="login-page login btn bg-dark text-light mr-3" type="submit">Login</button>
+              <button class="signup-page btn bg-dark text-light" type="submit">Sign Up</button>
+              {{/if}}
+              
+              
             </form>
           </div>
         </div>
@@ -28,7 +35,9 @@
     {{{body}}}
     <!-- Need help with a JS script for when they logout -->
   {{#if loggedIn}}
-  <script src="/"></script>
+  <script src="/js/logout.js"></script>
   {{/if}}
 </body>
+<script src="/js/login-page.js"></script>
+<script src="/js/signup-page.js"></script>
 </html>
