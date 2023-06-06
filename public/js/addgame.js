@@ -1,9 +1,3 @@
-// ex: GET https://api.rawg.io/api/games?dates=2019-01-01,2019-12-31&ordering=-added
-
-// ex: GET https://api.rawg.io/api/platforms?key=YOUR_API_KEY
-
-// require('dotenv').config();
-let gameData;
 const gameSearchHandler = async (event) => {
     event.preventDefault();
     console.log("game search button clicked!");
@@ -11,7 +5,15 @@ const gameSearchHandler = async (event) => {
     let game = document.querySelector('#gameSearch').value.trim(); // super mario galaxy
     game = game.split(" ").join("-").toLowerCase();  // super-mario-galaxy
     const url = `https://api.rawg.io/api/games/${game}?key=1b296d98b4fd4a98bdcb614862605bfc`; // https://api.rawg.io/api/games/super-mario-galaxy?key=
+    
     let gameCards = document.querySelector('.games');
+
+let gameName;
+let gameScore;
+let gameDate;
+let gamePlatform;
+let gameBkImg;
+
     if (game){ // if exists fetch the data from the url 
         const response = await fetch(url, {
             method: 'GET',
@@ -20,11 +22,12 @@ const gameSearchHandler = async (event) => {
             return response.json();
         }).then(data => {
             console.log(data);
-            // console.log(data.name);
-            // console.log(data.metacritic);
-            // console.log(data.released);
-            // console.log(data.platforms[0].platform.name);
-            // console.log(data.background_image);
+            const title = data.name;
+            const metacritic = data.metacritic;
+            const releaseDate = data.released;
+            const platform = data.platforms[0].platform.name;
+            const backgroundImg = data.background_image;
+
             const firstDiv = document.createElement('div');
             firstDiv.classList.add('card');
             firstDiv.style.width = '18rem';
@@ -62,7 +65,26 @@ const gameSearchHandler = async (event) => {
             
             
             gameCards.appendChild(firstDiv);
-        })
+
+            gameName = title;
+            gameScore = metacritic;
+            gameDate = releaseDate;
+            gamePlatform = platform;
+            gameBkImg = backgroundImg;
+
+            
+        });
+
+        const response2 = await fetch('/api/games/', {
+            method: 'POST',
+            body: JSON.stringify({gameName, gameScore, gamePlatform, gameDate, gameBkImg }),
+            headers: {'Content-Type': 'application/json'}
+        });
+        if (response2.ok){
+            alert("game saved!")
+        } else {
+            alert("save game failed!");
+        } 
     }
 }
 
