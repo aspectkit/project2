@@ -26,7 +26,7 @@ const gameSearchHandler = async (event) => {
             // console.log(data.platforms[0].platform.name);
             // console.log(data.background_image);
             const firstDiv = document.createElement('div');
-            firstDiv.classList.add('card');
+            firstDiv.classList.add('card', 'text-dark', 'm-1', 'text-center');
             firstDiv.style.width = '18rem';
 
             const gameImg = document.createElement('img');
