@@ -8,8 +8,8 @@
     <div class="col-md-8">
       <div class="search">
         <i class="fa fa-search"></i>
-          <input type="text" class="form-control" placeholder="Search for a game..">
-            <button class="btn btn-secondary">Search</button>
+          <input id="gameSearch" type="text" class="form-control" placeholder="Search for a game..">
+            <button id="gameSearchButton" class="btn btn-secondary">Search</button>
       </div>
     </div>
   </div>
@@ -28,8 +28,12 @@
         <section class="py-5 my-5">
             <div class="container text-center">
                 <div class="row">
-                  {{!-- {{#each game }} --}}
                 </div>
               </div>
         </section>
+
+        <div class="games">
+
+        </div>
 </div>
+<script src="/js/addgame.js"></script>
