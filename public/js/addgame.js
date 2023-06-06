@@ -29,7 +29,7 @@ let gameBkImg;
             const backgroundImg = data.background_image;
 
             const firstDiv = document.createElement('div');
-            firstDiv.classList.add('card');
+            firstDiv.classList.add('card', 'text-dark', 'm-1', 'text-center');
             firstDiv.style.width = '18rem';
 
             const gameImg = document.createElement('img');
