@@ -7,6 +7,15 @@ const withAuth = require('../../utils/auth');
 // https://api.rawg.io/api/games/super-mario-galaxy?key=
 // this link gets the info for super mario galaxy as an example. api key is needed
 
+
+
+router.get('https://api.rawg.io/api/games/super-mario-galaxy?key=', async (req, res) => {
+    try {
+
+    } catch (err){
+        res.status(400).json(err);
+    }
+})
+
+
 module.exports = router;
-
-
