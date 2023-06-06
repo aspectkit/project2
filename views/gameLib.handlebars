@@ -4,15 +4,23 @@
         <h3 class="text-center">My Library of Games</h3>
         
 <div class="container">
-  <div class="row height d-flex justify-content-center">
-    <div class="col-md-8">
-      <div class="search">
-        <i class="fa fa-search"></i>
-          <input id="gameSearch" type="text" class="form-control" placeholder="Search for a game..">
-            <button id="gameSearchButton" class="btn btn-secondary">Search</button>
+  <div class="row d-flex justify-content-center">
+    <div class="col">
+      <div class="input-group input-group-lg">
+          <input id="gameSearch" type="text" class="form-control form-control-lg" placeholder="Search for a game..">
+            <button id="gameSearchButton" class="btn btn-secondary" type="button">
+              <i class="fas fa-search"></i>
+            </button>
+            </div>
       </div>
     </div>
+    <br>
+    <div class="games justify-content-center row m-5">
+    </div>
   </div>
+
+  
+
 </div>
 
 
@@ -32,8 +40,5 @@
               </div>
         </section>
 
-        <div class="games">
-
-        </div>
 </div>
 <script src="/js/addgame.js"></script>
