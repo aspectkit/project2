@@ -8,7 +8,7 @@ const gameSearchHandler = (event) => {
     
     let gameCards = document.querySelector('.games');
 
-let title;
+var title;
 let metaScore;
 let releaseDate;
 let platform;
@@ -93,11 +93,7 @@ let gameFound = true;
                 platform = platformsArr;
                 imageFile = backgroundImg;
                 gameWebsite = website;
-//                 let title;
-// let metaScore;
-// let releaseDate;
-// let platform;
-// let imageFile;
+
                 } else {
                     gameFound = false;
                     alert("Game not found!");
@@ -105,6 +101,8 @@ let gameFound = true;
         });
 
         if (gameFound){
+            console.log(title);
+
             const response2 = fetch('/api/games/', {
                 method: 'POST',
                 body: JSON.stringify({title, metaScore, platform, releaseDate, imageFile, gameWebsite }),
@@ -113,7 +111,7 @@ let gameFound = true;
             if (response2.ok){
                 alert("game saved!")
             } else {
-                alert("save game failed!");
+                // alert("save game failed!");
             } 
         }
     } 

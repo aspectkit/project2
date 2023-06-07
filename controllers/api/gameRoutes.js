@@ -13,12 +13,13 @@ router.post('/', async (req, res) => {
     console.log(req.body);
     try {
         const gameData = await Game.create(req.body);
+        req.session.game_id = gameData.id; 
         console.log(gameData);
-        req.session.save(() => {
-            req.session.game_id = gameData.id; 
-            res.status(200).json(gameData);
+        // req.session.save(() => {
+            
+        //     res.status(200).json(gameData);
 
-        });
+        // });
         res.json(gameData);
     } catch (err){
         console.log(err);
