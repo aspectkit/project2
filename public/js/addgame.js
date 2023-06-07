@@ -1,4 +1,4 @@
-const gameSearchHandler = async (event) => {
+const gameSearchHandler = (event) => {
     event.preventDefault();
     console.log("game search button clicked!");
 
@@ -8,16 +8,16 @@ const gameSearchHandler = async (event) => {
     
     let gameCards = document.querySelector('.games');
 
-let gameName;
-let gameScore;
-let gameDate;
-let gamePlatform;
-let gameBkImg;
+let title;
+let metaScore;
+let releaseDate;
+let platform;
+let imageFile;
 let gameWebsite;
 let gameFound = true;
 
     if (game){ // if exists fetch the data from the url 
-        const response = await fetch(url, {
+        const response = fetch(url, {
             method: 'GET',
             headers: {'Content-Type': 'application/json' },
         }).then(response => {
@@ -27,10 +27,10 @@ let gameFound = true;
                 gameFound = true;
                 console.log(data);
 
-                const title = data.name;
+                const gmtitle = data.name;
                 const metacritic = data.metacritic;
-                const releaseDate = data.released;
-                const platform = data.platforms[0].platform.name;
+                const release = data.released;
+                const gmplatform = data.platforms[0].platform.name;
                 const backgroundImg = data.background_image;
                 const website = data.website;
 
@@ -87,12 +87,17 @@ let gameFound = true;
                 
                 gameCards.appendChild(firstDiv);
 
-                gameName = title;
-                gameScore = metacritic;
-                gameDate = releaseDate;
-                gamePlatform = platform;
-                gameBkImg = backgroundImg;
+                title = gmtitle;
+                metaScore = metacritic;
+                releaseDate = release;
+                platform = platformsArr;
+                imageFile = backgroundImg;
                 gameWebsite = website;
+//                 let title;
+// let metaScore;
+// let releaseDate;
+// let platform;
+// let imageFile;
                 } else {
                     gameFound = false;
                     alert("Game not found!");
@@ -100,9 +105,9 @@ let gameFound = true;
         });
 
         if (gameFound){
-            const response2 = await fetch('/api/games/', {
+            const response2 = fetch('/api/games/', {
                 method: 'POST',
-                body: JSON.stringify({gameName, gameScore, gamePlatform, gameDate, gameBkImg }),
+                body: JSON.stringify({title, metaScore, platform, releaseDate, imageFile, gameWebsite }),
                 headers: {'Content-Type': 'application/json'}
             });
             if (response2.ok){
@@ -112,7 +117,7 @@ let gameFound = true;
             } 
         }
     } 
-}
+} 
 
 
 

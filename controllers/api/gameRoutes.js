@@ -9,15 +9,19 @@ const {Game} = require('../../models');
 
 
 
-router.get('/', async (req, res) => {
+router.post('/', async (req, res) => {
+    console.log(req.body);
     try {
         const gameData = await Game.create(req.body);
+        console.log(gameData);
         req.session.save(() => {
             req.session.game_id = gameData.id; 
             res.status(200).json(gameData);
+
         });
         res.json(gameData);
     } catch (err){
+        console.log(err);
         res.status(400).json(err);
     }
 })
