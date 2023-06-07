@@ -1,5 +1,6 @@
 
 
+
        body{
         background-color:#eee;
         font-family: "Poppins", sans-serif;
@@ -52,4 +53,9 @@
         width: 110px;
         background: #212529;
 
-       }
+       } */
+
+body {
+       /* background-image: '../Images/1205979.png'; */
+       background-image: url('../Images/1205979.png');
+}
