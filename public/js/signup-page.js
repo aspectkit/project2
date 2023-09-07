@@ -4,7 +4,4 @@ const signupPageHandler = async (event) => {
     document.location.replace('/signup');
 };
 
-let signPg = document.querySelector('.signup-page');
-if (signPg){
-    document.querySelector('.signup-page').addEventListener("click", signupPageHandler);
-}
+document.querySelector('.signup-page').addEventListener("click", signupPageHandler);

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {Game} = require('../../models');
+const withAuth = require('../../utils/auth');
 
 // game routes need to be made here and the fetching can be done in public/js/addgame.js where when user presses submit on the search box we make the url with what the user typed in and see if there are results
 // if there is a result, add game to database and show on screen with info
@@ -9,20 +9,10 @@ const {Game} = require('../../models');
 
 
 
-router.post('/', async (req, res) => {
-    console.log(req.body);
+router.get('https://api.rawg.io/api/games/super-mario-galaxy?key=', async (req, res) => {
     try {
-        const gameData = await Game.create(req.body);
-        req.session.game_id = gameData.id; 
-        console.log(gameData);
-        // req.session.save(() => {
-            
-        //     res.status(200).json(gameData);
 
-        // });
-        res.json(gameData);
     } catch (err){
-        console.log(err);
         res.status(400).json(err);
     }
 })

@@ -6,20 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LevelUp!</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../../public/styles/style.css">
 
 </head>
-<body style=
-  "background-image: url('../Images/1205979.png');
-  background-repeat: no-repeat;
-  background-position: top right;">
+<body style="background-image:url(/Images/VideogameBackground.jpg);">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-          <p class="h1 p-3 text-white bold"><strong>LevelUp!</strong></p>
+          <p class="h1 bg-dark p-3 text-light">LevelUp!</p>
             <form class="page-btns d-flex">
               
               {{#if loggedIn}}
-              <button class="btn bg-dark text-light mr-3" id="logout">Log Out</button>
+              <button class="btn bg-dark text-light mr-3" id="logout">logout</button>
               {{else}}
               <button class="login-page login btn bg-dark text-light mr-3" type="submit">Login</button>
               <button class="signup-page btn bg-dark text-light" type="submit">Sign Up</button>

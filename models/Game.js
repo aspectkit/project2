@@ -21,7 +21,7 @@ Game.init(
             allowNull: false
         },
         platform: {
-            type: DataTypes.ARRAY(DataTypes.STRING),
+            type: DataTypes.STRING,
             allowNull: false
         },
         releaseDate: {
@@ -30,9 +30,6 @@ Game.init(
         },
         imageFile: {
             type: DataTypes.STRING,
-        },
-        gameWebsite: {
-            type: DataTypes.STRING
         }
     },
     {
