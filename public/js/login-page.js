@@ -3,5 +3,7 @@ const loginPageHandler = async (event) => {
     console.log("clicked login-page btn!");
     document.location.replace('/login');
 };
-
-document.querySelector('.login-page').addEventListener("click", loginPageHandler);
+let loginPg = document.querySelector('.login-page');
+if (loginPg){
+    document.querySelector('.login-page').addEventListener("click", loginPageHandler);
+}

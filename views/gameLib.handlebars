@@ -1,13 +1,12 @@
-<link rel="stylesheet" href="/styles/style.css">
 
-<div class="container-fluid bg-dark text-white py-5">  
+<div class="container bg-dark text-white py-5 rounded ">  
         <h3 class="text-center">My Library of Games</h3>
-        
+        <br>
 <div class="container">
-  <div class="row d-flex justify-content-center">
-    <div class="col">
+  <div class="row justify-content-center">
+    <div class="col-lg-6">
       <div class="input-group input-group-lg">
-          <input id="gameSearch" type="text" class="form-control form-control-lg" placeholder="Search for a game..">
+          <input id="gameSearch" type="text" class="form-control " placeholder="Search for a game..">
             <button id="gameSearchButton" class="btn btn-secondary" type="button">
               <i class="fas fa-search"></i>
             </button>
@@ -15,16 +14,15 @@
       </div>
     </div>
     <br>
-    <div class="games justify-content-center row m-5">
+    <div class="games justify-content-center row m-5 overflow-auto" style="height: 500px">
     </div>
   </div>
 
-  
 
 </div>
 
 
-        <div class="d-flex flex-row-reverse">
+        {{!-- <div class="d-flex flex-row-reverse">
             
             <div class="mr-5 m-1">
             <i id= "" class="fa-sharp fa-solid fa-sd-card fa-beat fa-2xl ml-3" style="color: #1f5127;"></i>
@@ -38,7 +36,11 @@
                 <div class="row">
                 </div>
               </div>
-        </section>
+        </section> --}}
+
 
 </div>
+
+
+
 <script src="/js/addgame.js"></script>
